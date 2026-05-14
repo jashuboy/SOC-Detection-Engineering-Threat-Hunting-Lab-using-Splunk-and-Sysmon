@@ -13,6 +13,54 @@ Built a cloud-based SOC (Security Operations Center) lab using Splunk Enterprise
 * Debian attacker VM for attack simulation
 * Splunk Universal Forwarder for centralized log collection
 
+  [Kali]
+  │
+  ├── brute force
+  ├── PowerShell abuse
+  ├── scans
+  ├── payload delivery
+  ▼
+
+[Windows Victim]
+  │
+  ├── Sysmon
+  ├── Windows Event Logs
+  ├── Security Logs
+  ▼
+
+[Splunk Server]
+  │
+  ├── detections
+  ├── dashboards
+  ├── alerts
+  └── investigations
+
+  ## Project Workflow
+
+1. Created three cloud-based virtual machines on Google Cloud Platform (GCP) to simulate a SOC environment:
+
+   * Attacker Machine (Debian Linux)
+   * Victim Machine (Windows Server)
+   * Monitoring Server (Ubuntu Splunk SIEM)
+
+2. Configured a centralized telemetry pipeline between the Windows victim machine and the Splunk monitoring server using Splunk Universal Forwarder.
+
+3. Installed and configured Sysmon on the Windows endpoint to generate detailed security telemetry such as process creation, PowerShell activity, authentication events, and network connections.
+
+4. Simulated multiple attack scenarios from the attacker machine including brute-force attacks, PowerShell abuse, LOLBins, persistence techniques, and malware-like behavior.
+
+5. Forwarded security logs and telemetry from the victim machine to Splunk SIEM for monitoring and analysis.
+
+6. Created dashboards, alerts, correlation rules, and detection queries using SPL (Search Processing Language) to identify suspicious behavior and attack patterns.
+
+7. Performed threat hunting, incident investigation, IOC extraction, and MITRE ATT&CK mapping using the collected telemetry.
+## Attack Simulations
+
+## Detection Examples
+
+## Dashboards
+
+
 ## Features Implemented
 
 * Centralized log collection using Splunk
@@ -36,7 +84,6 @@ Built a cloud-based SOC (Security Operations Center) lab using Splunk Enterprise
 * PowerShell
 * SPL (Search Processing Language)
 
-## Detection Examples
 
 ### Brute Force Detection
 
@@ -64,22 +111,3 @@ index=* EventCode=1 Image="*powershell.exe"
 * Windows telemetry analysis
 * MITRE ATT&CK mapping
 
-## Project Workflow
-
-1. Created three cloud-based virtual machines on Google Cloud Platform (GCP) to simulate a SOC environment:
-
-   * Attacker Machine (Debian Linux)
-   * Victim Machine (Windows Server)
-   * Monitoring Server (Ubuntu Splunk SIEM)
-
-2. Configured a centralized telemetry pipeline between the Windows victim machine and the Splunk monitoring server using Splunk Universal Forwarder.
-
-3. Installed and configured Sysmon on the Windows endpoint to generate detailed security telemetry such as process creation, PowerShell activity, authentication events, and network connections.
-
-4. Simulated multiple attack scenarios from the attacker machine including brute-force attacks, PowerShell abuse, LOLBins, persistence techniques, and malware-like behavior.
-
-5. Forwarded security logs and telemetry from the victim machine to Splunk SIEM for monitoring and analysis.
-
-6. Created dashboards, alerts, correlation rules, and detection queries using SPL (Search Processing Language) to identify suspicious behavior and attack patterns.
-
-7. Performed threat hunting, incident investigation, IOC extraction, and MITRE ATT&CK mapping using the collected telemetry.
