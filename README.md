@@ -120,7 +120,7 @@ index=* EventCode=3
 ![Unusual ports](Screenshots/unusual_ports.png)
 ![Network Activity](Screenshots/network_activity.png)
 ![Malware Behavior](Screenshots/malware_like_behavior.png)
-![Suspicious Powershell Networking](Screenshots/suspicious_powershell_networking.pn)
+![Suspicious Powershell Networking](Screenshots/suspicious_powershell_networking.png)
 ![Attacker Activity](Screenshots/attacker_activity_timeline.png)
 
 ## Features Implemented
