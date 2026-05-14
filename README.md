@@ -115,7 +115,7 @@ index=* EventCode=3
 ## Dashboards
 ![Top Failed logins](Screenshots/top_failed_logins.png)
 ![Suspicious Powershell Activity](Screenshots/suspicious_powershell_activity.png)
-![Top Security Events](Screenshots/top_security_events.png)
+![Top Security Events](Screenshots/top_security_event_IDs.png)
 ![Brute force Detection Alert](Screenshots/brute_force_detection_alert.png)
 ![Unusual ports](Screenshots/unusual_ports.png)
 ![Network Activity](Screenshots/network_activity.png)
