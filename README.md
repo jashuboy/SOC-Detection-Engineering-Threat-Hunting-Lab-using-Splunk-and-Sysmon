@@ -59,6 +59,14 @@ Built a cloud-based SOC (Security Operations Center) lab using Splunk Enterprise
 ## Detection Examples
 
 ## Dashboards
+![Brute force Detection Alert](Brute force Detection Alert.png)
+![Suspicious Powershell Activity](Suspicious Powershell Activity.png)
+![Top Failed logins](Top Failed logins.png)
+![Unusual ports](Unusual ports.png)
+![Network Activity](Network Activity.png)
+![Malware Bahavior](Malware Like Behavior.png)
+![Suspicious Powershell Networking](Detect Suspicious Powershell Networking.png)
+![Attacker Activity](Attacker Activity timeline.png)
 
 
 ## Features Implemented
