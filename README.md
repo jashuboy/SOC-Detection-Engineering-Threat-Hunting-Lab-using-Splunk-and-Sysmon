@@ -62,6 +62,88 @@ Built a cloud-based SOC (Security Operations Center) lab using Splunk Enterprise
 
 7. Performed threat hunting, incident investigation, IOC extraction, and MITRE ATT&CK mapping using the collected telemetry.
 
+## Setup Instructions
+1. Create Virtual Machines on GCP
+
+Create three virtual machines on Google Cloud Platform (GCP):
+
+Debian/Kali Linux VM (Attacker Machine)
+Windows Server VM (Victim Machine)
+Ubuntu Server VM (Splunk Monitoring Server)
+
+Configure firewall rules to allow:
+
+RDP (3389)
+Splunk Web (8000)
+Splunk Forwarder Port (9997)
+2. Install Splunk Enterprise on Ubuntu
+
+Install Splunk Enterprise on the Ubuntu monitoring server and enable:
+
+Splunk Web Interface
+Receiving on port 9997
+
+Access Splunk Web:
+
+http://<Ubuntu_VM_IP>:8000
+3. Install Sysmon on Windows
+
+Download and install Sysmon on the Windows victim machine for advanced endpoint telemetry collection.
+
+Verify Sysmon logs:
+
+Applications and Services Logs → Microsoft → Windows → Sysmon
+4. Install Splunk Universal Forwarder
+
+Install Splunk Universal Forwarder on the Windows VM and configure it to forward logs to the Ubuntu Splunk SIEM server.
+
+Forwarded logs include:
+
+Sysmon logs
+Security logs
+PowerShell logs
+System/Application logs
+5. Configure Inputs
+
+Configure inputs.conf on the Windows endpoint to monitor:
+
+[WinEventLog://Microsoft-Windows-Sysmon/Operational]
+disabled = 0
+
+[WinEventLog://Security]
+disabled = 0
+
+[WinEventLog://Windows PowerShell]
+disabled = 0
+
+[WinEventLog://System]
+disabled = 0
+6. Simulate Attacks
+
+Use the Debian/Kali attacker machine to simulate:
+
+RDP brute-force attacks
+Network scans using Nmap
+PowerShell abuse
+LOLBin activity
+Persistence techniques
+7. Monitor Logs in Splunk
+
+Analyze telemetry in Splunk using SPL queries, dashboards, alerts, and correlation rules.
+
+Example SPL Query:
+
+index=* EventCode=4625
+| stats count by Source_Network_Address
+8. Perform Threat Hunting & Detection Engineering
+
+Use collected telemetry to:
+
+Investigate incidents
+Monitor suspicious activity
+Create detections and alerts
+Perform MITRE ATT&CK mapping
+Build dashboards for SOC monitoring
    
 ## Attack Simulations
 ### Brute Force Attack
